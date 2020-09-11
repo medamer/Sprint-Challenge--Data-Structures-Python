@@ -16,29 +16,18 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
-#binary = BSTNode(names_1)
-# duplicates = binary.contains(names_2)
+
+binary = BSTNode(' ')
 for i in names_1:
-    binary = BSTNode(i)
-    for j in names_2:
-        if binary.contains(j) is True:
-            duplicates.append(i)
+    binary.insert(i)
+
+for j in names_2:
+    if binary.contains(j) is True:
+        duplicates.append(j)
 
 
 # duplicates = [value for value in names_1 if value in names_2]
 # Replace the nested for loops below with your improvements
-# class Find_dup:
-#     def __init__(self):
-#         self.list1 = None
-#         self.list2 = None
-#     def find_dup(list1, list2):
-#         l = []
-#         for value in list1:
-#             if value in list2:
-#                 l.append(value)
-#         return l
-
-# duplicates = Find_dup.find_dup(names_1, names_2)
 
 #breakpoint()
 end_time = time.time()
