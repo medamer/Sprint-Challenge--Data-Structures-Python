@@ -1,4 +1,8 @@
 import time
+import sys
+
+sys.path.append('./names/binary_search.py')
+from binary_search import BSTNode
 
 start_time = time.time()
 
@@ -12,15 +16,31 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
+#binary = BSTNode(names_1)
+# duplicates = binary.contains(names_2)
+for i in names_1:
+    binary = BSTNode(i)
+    for j in names_2:
+        if binary.contains(j) is True:
+            duplicates.append(i)
+
+
+# duplicates = [value for value in names_1 if value in names_2]
 # Replace the nested for loops below with your improvements
+# class Find_dup:
+#     def __init__(self):
+#         self.list1 = None
+#         self.list2 = None
+#     def find_dup(list1, list2):
+#         l = []
+#         for value in list1:
+#             if value in list2:
+#                 l.append(value)
+#         return l
 
-duplicates = [value for value in names_1 if value in names_2]
+# duplicates = Find_dup.find_dup(names_1, names_2)
 
-# for name_1 in names_1:
-#     for name_2 in names_2:
-#         if name_1 == name_2:
-#             duplicates.append(name_1)
-
+#breakpoint()
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
